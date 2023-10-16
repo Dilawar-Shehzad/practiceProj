@@ -8,7 +8,7 @@ import {
 
 const App = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView >
       <View style={styles.mainCont} >
         <Text style={styles.sectionContainer}>Hello React Native</Text>
         <Text style={styles.sectionContainer}>Hello React Native</Text>
