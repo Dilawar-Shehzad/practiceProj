@@ -6,7 +6,8 @@ import {
   View,
 } from 'react-native';
 
-const App = () => {
+function App() {
+
   return (
     <SafeAreaView >
       <View style={styles.mainCont} >
