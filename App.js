@@ -6,7 +6,7 @@ import {
   View,
 } from 'react-native';
 
-function App() {
+const App = () =>{
 
   return (
     <SafeAreaView >
