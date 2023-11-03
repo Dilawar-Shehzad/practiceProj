@@ -12,7 +12,7 @@ const App = () => {
     <SafeAreaView >
       <TextInput
         value={selectmulti}
-        placeholder='type text'
+        placeholder='type text here....'
         onChangeText={(text) => setSelectMulti(text)}
         style={styles.mainCont}
       /> 
