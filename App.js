@@ -1,41 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
   Text,
-  View,
+  TextInput,
 } from 'react-native';
 
 const App = () => {
+  const [selectmulti, setSelectMulti] = useState('')
   return (
     <SafeAreaView >
-      <View style={styles.mainCont} >
-        <Text style={styles.sectionContainer}>Hello React Native</Text>
-        <Text style={styles.sectionContainer}>Hello React Native</Text>
-        <Text style={styles.sectionContainer}>Hello React Native</Text>
-        <Text style={styles.sectionContainer}>Hello React Native</Text>
-        <Text style={styles.sectionContainer}>Hello React Native</Text>
-        <Text style={styles.sectionContainer}>Hello React Native</Text>
-      </View>
-      
+      <TextInput
+        value={selectmulti}
+        placeholder='type text'
+        onChangeText={(text) => setSelectMulti(text)}
+        style={styles.mainCont}
+      /> 
+      {selectmulti !== '' ?
+        <>
+          {!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(selectmulti)
+            ?
+            <Text style={styles.sectionContainer}>Email is Not Valid</Text>
+            : null}
+        </>
+        : null}
+
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   sectionContainer: {
-    fontSize: 18,
-    padding: 12,
-  },
+    fontSize: 12,
+    color: 'red',
+    marginHorizontal: 20,
+    },
   mainCont: {
-    display: "flex",
-    justifyContent: "space-between",
-    flexDirection: "row",
-    flexWrap: 'wrap',
-    paddingHorizontal: 22,
-    alignItems: "center",
-    paddingVertical: 22,
-  }
+    marginTop: 20,
+    borderWidth: 1,
+    borderColor: "#000",
+    justifyContent: 'center',
+    marginHorizontal: 20,
+    height: 40,
+    paddingLeft: 12
+  },
 });
 
 export default App;
@@ -74,14 +82,14 @@ export default App;
 
 
 // https://github.com/Expensify/App/issues/29749
-// 1) use rn-fetch-blob packages if not installed 
+// 1) use rn-fetch-blob packages if not installed
 // 2) make async function to create path of file in mobile
 // 3) use funtion on pressable componnts
 // 4) when funtion runs, the texts converted into json
 // 5) android take persmission for downloading the path in mobile directory
-// 6) async callback funtion return the path or msgError 
+// 6) async callback funtion return the path or msgError
 // 7) For Permissions android Add some-line into "AndroidManifest.xml" file android folder of app
-// 8) stop rotuing or navigation if using. 
+// 8) stop rotuing or navigation if using.
 // ---------Practical CODING--------
 // const handleDownload = () => {
 //   const res = await RNFetchBlob.config({
@@ -101,18 +109,18 @@ export default App;
 // }) .fetch("GET", "http://www.example.com/file/example.zip/.pdf", {
 //   })
 //   .then((res) => {
-//    the temp file path 
+//    the temp file path
 //     console.log("The file saved to ==> ", res.path());
 //   }).catch((error)=>{console.log("if Error ==> ", error?.message});
 //  console.log("newRes ==>",newRes)
 // }
-// handleDownload() 
-// OR If used in WEB 
-// Sinmply create DOM and link with a tag, browser auto download the url   
+// handleDownload()
+// OR If used in WEB
+// Sinmply create DOM and link with a tag, browser auto download the url
 
 // https://github.com/Expensify/App/issues/29748
-// 1) Mount the Request Tab 
-// 2) select the points and save in useState 
+// 1) Mount the Request Tab
+// 2) select the points and save in useState
 //  const [points,setPoint] = useState({
 //   startPoint:  null/undefined ,
 //   finishPoint:  null/undefined
@@ -138,7 +146,7 @@ export default App;
 // }
 
 // RICH TEXT METHOD
-// combie many text under the single main Text tag 
+// combie many text under the single main Text tag
 // example
 //  <Text ellipsizeMode='middle' numberOfLines={1} >
 //   <Text>{"SAMPLE_TEXT_1"}</Text>
@@ -147,32 +155,32 @@ export default App;
 
 // ___________________________________________
 // https://github.com/Expensify/App/issues/29803
-//  1) save both values in Redux 
-//  2) At Finish point Call UseReducer and get the redux values 
-//  3) Match the both values from redux 
+//  1) save both values in Redux
+//  2) At Finish point Call UseReducer and get the redux values
+//  3) Match the both values from redux
 //  4) created callback funtion for resultant
 //  5) change error msg if values does not match
 // ---Practical Coding--------
 //   const {startPoint,finishPoint} = useReducer(state => state)
 //  const handleError = () =>{
 //   if(startPoint?.value == finishPoint?.value){
-// // hit API 
+// // hit API
 //   }else{
 //  alert('Please remove duplicate waypoints')
 //   }
 //  }
 
 // https://github.com/Expensify/App/issues/29783
-//  1) save value in redux funtions 
-//  2) use redux value in both pages under funtion 
+//  1) save value in redux funtions
+//  2) use redux value in both pages under funtion
 //  3) create single funtuion and call it in both pages or components
-//  4) pass parameter in funtions that check redux address if it is valid or not 
+//  4) pass parameter in funtions that check redux address if it is valid or not
 //  5) if address is not valid function return something like false,null,undefined
-//  6) final results will depend on below condition  
+//  6) final results will depend on below condition
 //  ---------Practical Coding--------
 //  const searchAdress = useReducer(state => state)
 //  const CheckAddress = (data) =>{
-//  validAdress is from api 
+//  validAdress is from api
 //   if(data?.address == validAdress){
 //  when we have valid & Existing values
 //     return dispatchEvent({tyep:CHECK_ADDRESS,payload:true})
