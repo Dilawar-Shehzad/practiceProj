@@ -1,31 +1,21 @@
-import React, { useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import {
-  SafeAreaView,
   StyleSheet,
   Text,
-  TextInput,
+  View,
 } from 'react-native';
 
 const App = () => {
-  const [selectmulti, setSelectMulti] = useState('')
   return (
-    <SafeAreaView >
-      <TextInput
-        value={selectmulti}
-        placeholder='type text here....'
-        onChangeText={(text) => setSelectMulti(text)}
-        style={styles.mainCont}
-      /> 
-      {selectmulti !== '' ?
-        <>
-          {!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(selectmulti)
-            ?
-            <Text style={styles.sectionContainer}>Email is Not Valid</Text>
-            : null}
-        </>
-        : null}
+    <View style={{
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: 50
+    }}>
+      <Text>Hello</Text>
+    </View>
 
-    </SafeAreaView>
   );
 }
 
@@ -34,7 +24,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: 'red',
     marginHorizontal: 20,
-    },
+  },
   mainCont: {
     marginTop: 20,
     borderWidth: 1,
@@ -44,9 +34,12 @@ const styles = StyleSheet.create({
     height: 40,
     paddingLeft: 12
   },
+
 });
 
 export default App;
+
+
 
 // https://github.com/Expensify/App/issues/29750
 // 1) Using clibBoard in funtion that can copy our text and emoji
@@ -197,3 +190,21 @@ export default App;
 //     <Text>{"searchAdress.startPoint"}</Text>
 //   </>
 // }
+
+
+// 30904
+// (FrontEnd Side)  we can make an static measurements points for the pixels of image that can verify before uploading the image on backend, the values points measure the pixels with by defualt values and if the pixel is below and eaqual to 2048px run the querry of uploading with no error otherwise use state and enable error here that clearified user that image is bigger than the limit  and image should not uploaded
+// (BackEnd Side) on the backend size there must be condition on querry that check the pixel limit size and on the true condition make db or server to accept the image with it's requirements size and show error
+
+
+// *30848*
+//  the issue is when we user go to offline API is not working and do not hide green dot, it is need to be secure pay request in local state in the functions where offline and online things is settiled, the conditions is added here in the offline setup to change color on the tap of button "Pay with Expensify", then our green dot is based on the state condition if tap is anbled with offline or online then show the dependecy of dots colour 
+
+// *30895*
+// Message text is not rendering with Scrolling, when in large text user is scrolling it will stuck and show empty screen, here we need to use pagination of the text in which allow 20 to 30 prevoius text as on scroll and hide other text, In this way the funtions helps to show only selected text and show long text with some string by clicking it on show whole text same as whatsapp type 
+
+  // *30798*
+  // In this, the cancel task's id created the new one tast with same data with pinned or unpinned chat rooms, in LHN we need to filter and seperate both accounts on with params that is pinned or unpinned whole Chat-Rooms message is stored in sinlge store and then filter according to  param of pinned or unpinned selection, then show both within single line of chats room builder, that's filteration need a conditions that will help to show both the chats-room without any doubling and for same data value the data. 
+
+  // *30893*
+  // If this count, update an api call api with send button or icon, used state to create clone of array with works in current data when user is added in the array show it's length in the form of values and it's will work immediately and show changes and addition of user back to back within array length, just have to know the actual format of vlaues form api or cloning array, In this way user could see changes randomly
