@@ -208,3 +208,39 @@ export default App;
 
   // *30893*
   // If this count, update an api call api with send button or icon, used state to create clone of array with works in current data when user is added in the array show it's length in the form of values and it's will work immediately and show changes and addition of user back to back within array length, just have to know the actual format of vlaues form api or cloning array, In this way user could see changes randomly
+
+
+
+
+
+
+
+  // *NEW_RELIC*
+  // 1) login to your new relic account and check Perfromance Monitoring feature is included or not 
+  // 2) Choose Dashboards from the New Relic One main screen. the dashobaord's contains visible button to create new Dashboard.
+  // 3) Press button for Establish a dashboard, Give the dashboard a name that is clearly recognisable and save it in your local device too.
+  // 4) Make sure the appropriate Account is chosen from the dropdown menu. choose this action carefully beacuse it can't be modified.
+  // 5) To add a new chart of your choise, click the addition sign (+).
+  // 6) Select the permissions you want for the control panel. Edit - All account permissions are selected by default. You can change them later in the settings menu when using the panel. 
+  // 7) Click on NRQL Query  Insert widget NRQL Alternatively, you can also select PromQL-Style or Basic from the main dashbard screen.
+  // 8) Press Save and Montior your project's anylatics
+  // *Note:* Once you add a widget, the dashboard automatically updates with the data. If you want to add images or graphics to the dashboard, select Add Text, Images or Links when you add a widget. Now you can see your data in a new way within APM!
+
+  // NRQL is New Relic's SQL-like query language, which it continues the overflowing the query of Item in Sql language,
+  // With the NRQL query builder , you can run queries of your data to create custom charts and other visualizations which helps you to monitoring tha app's data and thier corresponding in app envirenoment, 
+ // Our MySQL integration collects  inventory and metrics from  databases and sends them to our platform. There, you can check the health of your database server and analyze metrics data, making it easier to find the source of  problems.
+
+//  *31002*
+//  there component is not rendering the whole at once when user is clicked on the mail, component is not render and show blink on the screen, here we need to use UseEffect(()=>{},[]) or useCallback(()=>{},[]) with cleaning and uncleaned the message, it hide the glitch of screen and show navigate on the selected screen smoothly.
+
+
+// A New Relic is a piece of software that install on a host or servers  in an application that sends performance data to New Relic Dashboard. Where We use different agents for different products and coding languages. New Relic's infrastructure monitoring agent is a lightweight executable file that collects data about your hosts. It also reports data from some third party services, if enabled, and also log data. these all help us to monitoring the data of our host and anayalze the problem with it's transparent solutions which helps to establish solid realtionship with products and business.
+
+// *31020*
+//  In this Apple Id we have to chekc the apple id setup that may be the blockage from api and only allowed us to login with changing data in response it it is work fine the allow user to login again and rematched the from last response with new repaonse, and show finally relavent dataon the user's screen, but before clear chache of browser and global state data of our current user which will be come from our apple id's reponse 
+
+// *30999*
+// In this we need to scroll the selection list according to length of array and remove extra space too, when current array.length > 0 give scroll with some spacing, we have to create fnctions that will work on our array.length and call it under the useEffect with one cleaning functions, it's cacth our keboard's action and show data, this function is working on focus of our input and help us to avoid giving more and extra space and did not allow over scrolling with data
+
+// *31019*
+// it is accuring due to the focus touch eabled in keyboard, after every scroll keyboard detects that it is eanbled and then enabled keyboard. there's one function need to be run in instant which cath the state and focus value of keyboard, and then disable keyboard when user is scrolling the section list and loose the focus on the input component. this all goes under signle useEffect with two funtions that clean or unclean the functions at the time 
