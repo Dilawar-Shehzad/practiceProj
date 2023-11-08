@@ -244,3 +244,16 @@ export default App;
 
 // *31019*
 // it is accuring due to the focus touch eabled in keyboard, after every scroll keyboard detects that it is eanbled and then enabled keyboard. there's one function need to be run in instant which cath the state and focus value of keyboard, and then disable keyboard when user is scrolling the section list and loose the focus on the input component. this all goes under signle useEffect with two funtions that clean or unclean the functions at the time 
+// ________________________________________________________________________________
+// *31062*
+// For Sending and removing recipt should not reach in secnod time, after delete and send receipt from user api may called and in User B part the new data is not updated in real time, Here calling reciept api should run after some time travel to get the actual and to get new pic of reciept immedialtely this help to show instant chnages in real time on the dependecy of api, for infinity loading check the repsonse of api and stop the loader in every Status from api response, if api gives positive or negative statUs code, stop the loader in the both the conditions and show results according that is any message or dialouge or any messages.
+// *30896*
+// check the wrokflow of this api's, an api for sending message should be called with getting the email ftom the user's list, right now email is mentioned but api is not call, on sending  button it required a condition where when someone is mentioned api then direclt call api on selected user's mail, using asynchronous funtions for executing number of api and maintain thier responses. this function also have a condition that will check the exsiting email if any email exists, it show alert or modal with error message. Also check the api form back side, it's sending email on selected mail or not maybe some querry does not give repsonse. 
+// *31030*
+// In this we need to change the condtions on the online and oofline, when user complete all his action necessory for transiction and net is disable dont change the components just show the same components with an error on side about net is not connected but does not the change of comonents shwo same input and text and when netowrk is available, only when user is trying to proceed further with no network,api give reposnse in network error and we can show user an error.This conditions ease user.   
+
+// *24965*
+// in this case I need to check the files where the error is occurnig and find the problems and error on current selected line or column, start refactor and simplified the changes according to it's relavent steps also implement new changes with the help of software Type-Script guides in pages and refactor the implentation with current line of code. 
+
+// *31018*
+// In this case the emoji lists is only depending on the input tap it's need to be depended on whole page, where user is tapped outside the input screen use UseEffect(()=>{clear suggestion list off or clear here},[input dependency]); this useEffect helping to dismissed the emoji list in input on the user's tap on the page and anywhere but out tap on the screen emoji suggestion list will be dismissed. 
