@@ -1,19 +1,20 @@
 import React, { useCallback, useRef, useState } from 'react';
 import {
+  FlatList,
+  Image,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
-
+import { DummyData1 } from './src/utils/DummyData';
+import Ionicons from 'react-native-vector-icons/Ionicons'
 const App = () => {
   return (
     <View style={{
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: 50
+      paddingTop: 20,
+      paddingHorizontal:30
     }}>
-      <Text>Hello</Text>
+<Text>Hello</Text>
     </View>
 
   );
@@ -257,3 +258,22 @@ export default App;
 
 // *31018*
 // In this case the emoji lists is only depending on the input tap it's need to be depended on whole page, where user is tapped outside the input screen use UseEffect(()=>{clear suggestion list off or clear here},[input dependency]); this useEffect helping to dismissed the emoji list in input on the user's tap on the page and anywhere but out tap on the screen emoji suggestion list will be dismissed. 
+
+
+// *31128*
+// Right now there is some conditons or executing some api that changes the title from Distance to Merchant, check the conditions on the toggle button which shares a name and check if there's api call so run it and also remove condition from here on the distance input field, this should stopped changing the name of our app and allow to folow further steps of work flow. I am going to work on the toggle button and remove conditons if neccessory
+
+// *31134*
+// as it's issue is in the mac/safari so following are the possible solutions maybe helpful
+//--1) if it's the css issue so we can use the properties from css as min-height/web-kit's features, cal(max-height - min-height) and many more this can help us to midified solutin.
+//--2) I also use dimentions of style to calculate the over dependency and use built in feature to catch problem, this help to over lapped the button with search bar
+//--3)Safari > Preferences > Security > Web content: here may be some web is blocked by apple to secure the safest payment proccess   
+
+// *31155*
+// In this the responsiveness required to change in details, when tab size of browser is decreasing then using medai querry with flex properties or grid properties help to maintian it's sizes layouts, use styling querry and select some points  where they can change by default style of styling and browser, usnig flex properties on the emoji container and use RHS feature with aligning property to make changes on one side only(RHN or Center), this styling prperty make it not close and not to change the full side of emoji whole container.
+
+// */31136*
+// right now app is crashing when we slelcting pay where skeleton is running on the chat, fot this we have to check tha api is loading the correct data and if it is loading the right data then use condition. right when we click then it does not have any transiction data so the app is crashed at instatn wee need to use some chiane operators thay help to moderate or data and maintain app which prevent app crashes on run time if error found we can easily handle it
+
+// *31151*
+// In this program need to reverse the function to show the correct way order in the list, we need to cath the last item of the array in list and show the subtracted values on static circle with value, also this function need to reverse the array with it's actual value. when it's capture the of element and show ramining values on the circle icon with center place. 
