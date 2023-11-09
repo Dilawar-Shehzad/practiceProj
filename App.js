@@ -7,7 +7,6 @@ import {
   View,
 } from 'react-native';
 import { DummyData1 } from './src/utils/DummyData';
-import Ionicons from 'react-native-vector-icons/Ionicons'
 const App = () => {
   return (
     <View style={{
