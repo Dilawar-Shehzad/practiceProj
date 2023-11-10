@@ -1,19 +1,24 @@
 import React, { useCallback, useRef, useState } from 'react';
 import {
+  Dimensions,
   FlatList,
   Image,
+  ImageBackground,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
-import { DummyData1 } from './src/utils/DummyData';
-const App = () => {
+import { dummaData } from './src/utils/DummyData';
+const { width, height } = Dimensions.get('screen');
+
+const App = () => { 
   return (
     <View style={{
       paddingTop: 20,
       paddingHorizontal:30
     }}>
-<Text>Hello</Text>
+     
+     
     </View>
 
   );
@@ -276,3 +281,12 @@ export default App;
 
 // *31151*
 // In this program need to reverse the function to show the correct way order in the list, we need to cath the last item of the array in list and show the subtracted values on static circle with value, also this function need to reverse the array with it's actual value. when it's capture the of element and show ramining values on the circle icon with center place. 
+
+// *31069*
+//  here we need to use pay button container AS parent of all and use condional rendering under main parent div to show it's child and also need to modify thw styling of the pay options div and used under the postion value with according to height of the screen with pre-defined height of our parental parts, this may help to over ride and collapse the initial size of the UI Modal on the screen
+
+  // *31197*
+  // here TextInput is not working in native androdi mode, we need to check the custom components of Textinput and check there if something did not updating on devices, also need to check the styling of text input that taking width,padding and margins which cause the cutting the words and characters of the field, for input icon aur curson it's a default in every mobile but focus props should b rnable when mobiles keyboard enables.
+
+  // *31195*
+  // here loader state is not updated anymore, when user is trying to create a plan after api is called or some query is triggered then loading state is true or when api is created or in between process the state is not false and did not showing a navigation, here api needs every state or status code to false the api and perform further operations like navigation if plan created successfully or show error when user is not able to create a plan or anything can be possible 
